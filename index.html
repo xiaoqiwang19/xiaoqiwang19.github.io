@@ -234,6 +234,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/CNV检测软件之CONTRA/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王小奇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无奇不有">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/14/CNV检测软件之CONTRA/" itemprop="url">CNV检测软件之CONTRA</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T17:24:11+08:00">
+                2018-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CNV软件使用/" itemprop="url" rel="index">
+                    <span itemprop="name">CNV软件使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>软件地址：<a href="http://jtjli.users.sourceforge.net/" target="_blank" rel="noopener">http://jtjli.users.sourceforge.net/</a><br>（1）软件说明<br>检测CNV，可用于检测配对样本与非配对样本，当检测非配对样本时可以用多个对照样本建立一个基线<br>CONTRA检测靶区域CNV的增加或缺失策略主要有：去除GC含量偏好性的碱基水平计算log率，不平衡文库对文库大小log率影响的校正，通过biin和插入值大小评估log率的变化。<br>（2）软件要求：<br>python版本最好用2.6版本的（主要是用的 python2.6版本的multiprocessing’module）<br>R<br>R包 DNACopy<br>source(“<a href="https://bioconductor.org/biocLite.R&quot;" target="_blank" rel="noopener">https://bioconductor.org/biocLite.R&quot;</a>)<br>biocLite(“DNAcopy”)<br>samtools和bedtools<br>conda重装bedtools(conda install -c bioconda bedtools )<br>bed文件的要求：<br>Chromosome    ChromStart    ChromEnd     Name （name可以是任何值，用于注释，一般用基因名，最好不要有表头）<br>（3）CONTRA工作流程<br>i）预处理   包括对输入文件是否符合输入文件的要求    maxRegionSize如果该参数给定的话，大的靶区域会根据该参数的情况被分成多个小区域<br>ii) bedtools将测试样品和对照样品转换为每个碱基对的read计数； 在对照样本中，目标区域的reas数太少（默认情况下，readcount大于10单碱基对数小于10）被排除在进一步分析之外。然后根据两个样本的总读数的几何平均值对剩余的reads数进行缩放。<br>iii） 对于每个目标区域，在测试和对照之间的碱基水平log率是基于缩放的read count值，它的平均值用于估计该区域的log率。然后根据 log-ratio 和log-coverage线性关系，移除库大小偏差。然后根据它们log-coverage的相似性，这些区域被bin化。<br>iv） 然后计算每个区域的显著性，并对其进行调整以减少错误发现率。结果在是以制表符分隔符或VCF 4.0格式展示.<br>v） 如果指定了大的删除选项，将在区域log-ratio上执行循环二进制分割，使用不同的参数来实现不同的分割分辨率。将不同分辨率的分割结果组合在一起进行最终的CNV检测。<br>（4）当没有配对样本时，可以用对照集合做一个基线文件</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/不忘初心/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -409,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -420,7 +562,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -431,7 +573,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
